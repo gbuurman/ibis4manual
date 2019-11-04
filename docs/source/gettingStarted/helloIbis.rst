@@ -45,6 +45,8 @@ The outer part reads:
          ...
      </Configuration>
 
+* The above mentioned xml can be used on Windows and Mac OSX
+
 This part can be almost the same for each Frank. The only interesting thing here is
 the ``name`` attribute that gives
 this Frank the name ``Ibis4DockerExample``. Realm is a pointer to an workdomain for the framework.
@@ -67,6 +69,8 @@ When we examine the ``<Configuration>`` tag, we find the following:
          </Pipeline>
      </Adapter>
    
+* The above mentioned xml can be used on Windows and Mac OSX
+
 An adapter (HelloDockerWorld) is a service that is triggered by a receiver and
 executes a pipeline in response. The ``<Receiver>`` tag
 defines the receiver, while the ``<Pipeline>`` tag defines the
@@ -84,6 +88,8 @@ Our receiver reads:
          <JavaListener name="HelloDockerWorld"/>
      </Receiver>
      ...
+
+* The above mentioned xml can be used on Windows and Mac OSX
 
 It has the name ``HelloDockerWorld``. Its further definition
 is provided by the tag within, ``<JavaListener>``. Listeners
@@ -116,6 +122,8 @@ should be processed. It reads:
      </Pipeline>
      ...
 
+* The above mentioned xml can be used on Windows and Mac OSX
+
 A pipeline is a network of pipes. The ``firstPipe="HelloDockerWorld"``
 attribute defines that the message coming from the receiver should go
 to the pipe named "HelloDockerWorld". The ``<Exit>`` tag defines 
@@ -136,6 +144,8 @@ It reads:
        <Forward name="success" path="EXIT"/>
    </FixedResultPipe>
    ...
+
+* The above mentioned xml can be used on Windows and Mac OSX
 
 Pipes are predefined functions that can be performed on
 the incoming message. The ``<FixedResultPipe>`` ignores
