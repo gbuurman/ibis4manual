@@ -3,9 +3,11 @@
 Hello World Source Code
 =======================
 
+Before we start explaining Ibis, the use and possibilities, in first this documentation is writing for a Windows environment and the necessary tools. It is also posisble to run Ibis in  OSX (Mac) environment. The specific cmd's and/or remarks are written in separate bold lines.
+
 In this section we study the example Frank provided in https://github.com/ibissource/docker4ibis/.
-During installation, you put it in "classes/Configuration.xml" relative to the folder that contains
-the "Ibis4DockerExample" Frank. It reads:
+During installation, you put it in "classes/Configuration.xml" (see the properties file for the correct namingconvention) relative to the folder that contains
+the "Ibis4DockerExample". 
 
 .. code-block:: XML
 
@@ -26,10 +28,13 @@ the "Ibis4DockerExample" Frank. It reads:
 	   </Adapter>
    </Configuration>
 
+* The above mentioned xml can be used on Windows and Mac OSX
+
+
 Frank
 -----
 
-The outer part of it reads:
+The outer part reads:
 
   .. code-block:: XML
 
@@ -42,7 +47,8 @@ The outer part of it reads:
 
 This part can be almost the same for each Frank. The only interesting thing here is
 the ``name`` attribute that gives
-this Frank the name ``Ibis4DockerExample``.
+this Frank the name ``Ibis4DockerExample``. Realm is a pointer to an workdomain for the framework.
+You can't work without it.
 
 Adapter
 -------
@@ -61,7 +67,7 @@ When we examine the ``<Configuration>`` tag, we find the following:
          </Pipeline>
      </Adapter>
    
-An adapter is a service that is triggered by a receiver and
+An adapter (HelloDockerWorld) is a service that is triggered by a receiver and
 executes a pipeline in response. The ``<Receiver>`` tag
 defines the receiver, while the ``<Pipeline>`` tag defines the
 pipeline.
@@ -79,7 +85,7 @@ Our receiver reads:
      </Receiver>
      ...
 
-It has name ``HelloDockerWorld``. Its further definition
+It has the name ``HelloDockerWorld``. Its further definition
 is provided by the tag within, ``<JavaListener>``. Listeners
 are building blocks that accept input. The choice for
 ``<JavaListener>`` means that the adapter "HelloDockerWorld" is
@@ -90,7 +96,7 @@ There are other listeners, for example ``<ApiListener>`` and
 ``<DirectoryListener>``. ``ApiListener`` makes your adapter
 listen to REST HTTP requests. ``DirectoryListener``
 triggers your adapter when a file is added
-to a chosen directory on a (server-side) local file system.
+to a chosen directory on a (server-side) local file system. It polls the directory.
 For a complete list of all listeners, see
 https://ibis4example.ibissource.org/iaf/ibisdoc/.
 
