@@ -182,7 +182,7 @@ This results in the following output: ::
 
   Input booking does not satisfy booking.xsd
 
-From the HTTP status code 500, we see that processing exited with exit state
+From the HTTP status code 500, we see that processing exited with exit state 
 "failure". This exit state has path "ServerError", which is reached through
 the pipe named "makeInvalidBookingError". The adapter thus detected that
 the incoming message did not satisfy XML schema "booking.xsd". This is also
